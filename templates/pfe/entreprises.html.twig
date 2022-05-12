@@ -3,24 +3,18 @@
 {% block title %}PFE par entreprise{% endblock %}
 
 {% block body %}
-<div class="row">
 
-    {%for entreprise in entreprises %}
-       <div class="card col-3 ">
-           <div class="card text-white mb-3 {%if loop.index is odd%}alert-danger{%else%}alert-success{%endif%}" style="max-width: 18rem;">
-
-               <div class="card-header">{{entreprise.designation}}</div>
-               <div class="card-body {%if loop.index is odd%}alert-danger{%else%}alert-success{%endif%}">
-                   <h5 class="card-title">{{entreprise.pfes|length}}</h5>
-                   <p class="card-text">Ceci est un texte</p>
-               </div>
-           </div>
-
-       </div>
-    {%endfor%}
-
-
-</div>
-
+    <div class="row ">
+        {%for entreprise in entreprises%}
+        <div class="card col-3 ">
+            <div class="card text-black m-auto mb-3 {%if loop.index is odd%}alert-danger{%else%}alert-success{%endif%}" style="width: 18rem;">
+                <div class="card-header">{{entreprise.0.entreprise.designation}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{entreprise.1}} Pfe(s)</h5>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
 
 {% endblock %}

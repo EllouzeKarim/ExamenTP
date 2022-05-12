@@ -47,8 +47,9 @@ class PFEController extends AbstractController
     #[Route('/total', name: 'app_pfe_total')]
     public function vuetotal(Request $request,): Response
     {
-        $entreprises = $this->repository1->findAll();
-
+       // $entreprises = $this->repository1->findAll();
+       // $repository=$doctrine->getRepository(PFE::class);
+        $entreprises=$this->repository->findByEntreprise();
         return $this->render('/pfe/entreprises.html.twig',['entreprises'=>$entreprises]);
 
 
